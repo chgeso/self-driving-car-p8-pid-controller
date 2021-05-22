@@ -38,5 +38,23 @@ Fellow students have put together a guide to Windows set-up for the project [her
 ## Reflection
 
 Describe the effect each of the P, I, D components had in your implementations.   
-What you expected? Through P component, I expected when I increase P value 
+What you expected? Through P component, I expected the control valve moved quickly when I increased P value. This helps to access the setpoint as the value is increased. However P component cannot converge a stable value. Regarding I component, through the experiments, I component make the stability to be weak because of making a large signal. Therefore, I set it to zero not to use it. Through D component, I expected the overshoot was suppressed when I increased D value.   
+Here is some examples to show which is considered.   
+In case of P = 0.5, I = 0.0, D = 0.0   
+Link: ./video/only_P_component.m4v   
 
+In case of P = 0.2, I = 0.0, D = 5.0   
+Link: ./video/P_and_D_components.m4v   
+
+Therefore, finally I chose the set (P = 0.2, I = 0.0, D = 5.0)
+
+How I chose the final hyperparameters. First of all, I tried to find manually. Here is the list for my core try-outs.   
+| Try-out No. |   P   |   I   |   D   |                        Remark                      |
+|-------------|-------|-------|-------|----------------------------------------------------|
+|      01     |   0   |   0   |   0   |                     Initial try-out                |
+|      02     |  0.5  |   0   |   0   |                   I give a value of P.             |
+|      03     |  0.2  |   0   |  0.5  |  For stability, I give D value and reduce P value. |
+|      04     |  0.1  |  0.1  |  0.8  |  I try to give I value to help find optimal value. |
+|      05     |  0.1  | 0.001 |  0.9  |  I value cannot help to control much in this env.  |
+|      06     |  0.2  |   0   |  0.9  |  To overcome the rapid curve, I increase P value.  |
+|      07     |  0.2  |   0   |  5.0  |  Finally, to be stable, I increase D value more.   |   

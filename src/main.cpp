@@ -54,7 +54,7 @@ int main() {
    * 0.2, 0, 0.9
    * 0.2, 0, 1.0
    * 0.2, 0, 2.0
-   * 0.2, 0, 3.0 => This is the suggested solution.
+   * 0.2, 0, 5.0 => This is the suggested solution.
    */
   
   /**
@@ -64,8 +64,8 @@ int main() {
    */
 
   double init_Kp = 0.2;
-  double init_Ki = 0;
-  double init_Kd = 3.0;
+  double init_Ki = 0.0;
+  double init_Kd = 5.0;
   
   pid.Init(init_Kp, init_Ki, init_Kd);
 
